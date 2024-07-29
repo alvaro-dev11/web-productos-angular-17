@@ -1,0 +1,35 @@
+<div class="container">
+  @if (loading) {
+  <strong>Cargando información...</strong>
+  } @if (!loading) {
+  <h1>Todos los Productos disponibles:</h1>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of listaProductos; let i = index">
+        <th scope="row">{{ producto.id }}</th>
+        <td>{{ producto.title }}</td>
+        <td>{{ producto.price | currency }}</td>
+        <td>{{ producto.description }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            (click)="goDetailProduct(producto.id)"
+          >
+            Detalle
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  }
+</div>

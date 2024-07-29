@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  flex-direction: row !important;
+  gap: 2rem;
+  width: 100%;
+  max-width: 620px;
+}
+img{
+  width: 50%;
+}
